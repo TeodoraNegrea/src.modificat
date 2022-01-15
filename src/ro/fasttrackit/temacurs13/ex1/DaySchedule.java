@@ -1,24 +1,30 @@
 package ro.fasttrackit.temacurs13.ex1;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
 public class DaySchedule {
-    private final DaysOfTheWeek days;
+    private DaysOfTheWeek days;
     private final List<String> activities;
 
 
     public DaySchedule(DaysOfTheWeek days,List<String> activities) {
         this.days = days;
-        this.activities = new ArrayList<String>();
+        this.activities = activities;
+
+    }
+    public DaySchedule(List<String> activities) {
+
+        this.activities = activities == null
+                ? new ArrayList<String>()
+                : new ArrayList<String>(activities);
+
 
     }
 
-
-
-
-    public DaysOfTheWeek getDays() {
+        public DaysOfTheWeek getDays() {
         return days;
     }
     public List<String> getActivities(){
